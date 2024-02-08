@@ -12,6 +12,23 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  Array.from({ length: n }, (_, i) => i + 1).forEach((num) => {
+    const multipleOfThree = num % 3 === 0;
+    const multipleOfFive = num % 5 === 0;
+
+    let res = '';
+
+    if (multipleOfThree) {
+      res += 'fizz';
+    }
+
+    if (multipleOfFive) {
+      res += 'buzz';
+    }
+
+    console.log(res || num);
+  });
+}
 
 module.exports = fizzBuzz;
