@@ -8,6 +8,24 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+// 1. Simple - Get methods from Array
+// class Queue {}
+// Queue.prototype.add = Array.prototype.unshift;
+// Queue.prototype.remove = Array.prototype.pop;
+
+// 2. Implement by my own
+class Queue {
+  constructor() {
+    this.store = [];
+  }
+
+  add(record) {
+    this.store.unshift(record);
+  }
+
+  remove() {
+    return this.store.pop();
+  }
+}
 
 module.exports = Queue;
